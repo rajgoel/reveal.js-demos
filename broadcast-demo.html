@@ -152,14 +152,20 @@
 		Reveal.initialize({
 			controls: true,
 			progress: true,
-			history: true,
+			history: false,
 			center: true,
 			mouseWheel: true,
 			previewLinks: false,
 			broadcast: {
 				secret: '$2a$05$hhgakVn1DWBfgfSwMihABeYToIBEiQGJ.ONa.HWEiNGNI6mxFCy8S',
 				connection: {
-					socketURL: 'https://rtcmulticonnection.herokuapp.com:443/'
+					// For testing purposes you may use below server, but availability and stability are not guaranteed. 
+					// For anything mission critical I recommend you run your own server. 
+					// You can deploy https://github.com/muaz-khan/RTCMultiConnection on heroku.com
+					// See instructions at https://github.com/muaz-khan/RTCMultiConnection/blob/master/docs/installation-guide.md
+					// The only change required to server.js is to set isUseHTTPs = true;
+					socketURL: "https://revealjs-broadcast.herokuapp.com/"
+//					socketURL: 'https://rtcmulticonnection.herokuapp.com:443/'
 				},
 			},
 			menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
@@ -185,6 +191,7 @@
 				{ src: '../reveal.js-plugins/menu/menu.js'},
 			],
 		});
+
 	</script>
 <a href="https://github.com/rajgoel/reveal.js-plugins"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
 
