@@ -168,16 +168,27 @@
 //					socketURL: 'https://rtcmulticonnection.herokuapp.com:443/'
 				},
 			},
+			chalkboard: { // font-awesome.min.css must be available
+				src: "chalkboard/chalkboard.json",
+				toggleChalkboardButton: { left: "80px" },
+				toggleNotesButton: { left: "130px" },
+//				pen:  [ 'crosshair', 'pointer' ]
+//				theme: "whiteboard",
+//				background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/whiteboard.png' ],
+//				pen:  [ 'crosshair', 'pointer' ]
+//				pen: [ url('reveal.js-plugins/chalkboard/img/boardmarker.png), auto' , 'url(reveal.js-plugins/chalkboard/img/boardmarker.png), auto' ],
+//			        color: [ 'rgba(0,0,255,1)', 'rgba(0,0,255,0.5)' ],
+//			        draw: [ (RevealChalkboard) ?  RevealChalkboard.drawWithPen : null , (RevealChalkboard) ? RevealChalkboard.drawWithPen : null ],
+			},
 			menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
 				themes: false,
 				transitions: false,
 				markers: true,
 				hideMissingTitles: true,
-					custom: [
-				{ title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
-				{ title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
-				    ]
-
+				custom: [
+					{ title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+					{ title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
+				]
 			},
 			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 			transition: Reveal.getQueryHash().transition || 'default', // none/fade/slide/convex/concave/zoom
@@ -188,8 +199,15 @@
 				{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 				{ src: '../reveal.js-plugins/broadcast/bCrypt.js'},
 				{ src: '../reveal.js-plugins/broadcast/broadcast.js'},
+				{ src: '../reveal.js-plugins/chalkboard/chalkboard.js'},
 				{ src: '../reveal.js-plugins/menu/menu.js'},
 			],
+			keyboard: {
+			    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+			    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+			},
 		});
 
 	</script>
