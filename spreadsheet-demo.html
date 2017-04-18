@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Spreadsheets with Reveal.js</title>
+
+	<meta name="description" content="A plugin for reveal.js">
+	<meta name="author" content="Asvin Goel">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="../reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+	<!-- Font awesome -->
+	<!--
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	-->	
+	<link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome-4.3.0/css/font-awesome.min.css">
+
+
+	<!-- Printing and PDF exports -->
+	<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="../reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+
+  <!-- ruleJS -->
+  <script src="../reveal.js-plugins/spreadsheet/ruleJS.all.full.min.js"></script>
+  <link rel="stylesheet" href="../reveal.js-plugins/spreadsheet/spreadsheet.css">
+
+</head>
+
+<body>
+
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides" >
+			<section>
+				<h1>Spreadsheets with Reveal.js</h1>
+				<p>
+					<small>Created by <a href="http://www.telematique.eu" >Asvin Goel</a></small>
+				</p>
+			</section>
+			<section>
+			<section>
+				<h3>Comma separated input</h3>
+
+<div class="spreadsheet" data-rows="5" data-cols="4">
+1,=A1,3
+4,5,6
+</div>
+			</section>
+			<section>
+				<h4>Source code</h3>
+<pre><code data-trim>
+&#60;div class="spreadsheet" data-rows="5" data-cols="4"&#62;
+1,=A1,3
+4,5,6
+&#60;/div&#62;
+</code></pre>
+			</section>
+			</section>
+			<section>
+			<section>
+				<h3>Tab separated input</h3>
+
+<div class="spreadsheet" data-delimiter="	">
+=$B$2	'Maserati'	"Mazda"	"Mercedes"	"Mini"	=A$1
+2009	0	2941	4303	354	5814
+2010	5	2905	2867	=SUM(A4,2,3)	=$B1
+2011	4	2517	4822	552	6127
+2012	=SUM(A2:A5)	=SUM(B5,E3)	=A2/B2	12	4151
+</div>
+			</section>
+			<section>
+				<h4>Source code</h3>
+<pre><code data-trim>
+&#60;div class="spreadsheet" data-delimiter="	"&#62;
+=$B$2	'Maserati'	"Mazda"	"Mercedes"	"Mini"	=A$1
+2009	0	2941	4303	354	5814
+2010	5	2905	2867	=SUM(A4,2,3)	=$B1
+2011	4	2517	4822	552	6127
+2012	=SUM(A2:A5)	=SUM(B5,E3)	=A2/B2	12	4151
+&#60;/div&#62;
+</code></pre>
+			</section>
+			</section>
+			<section>
+			<section>
+				<h3>File input</h3>
+
+<div class="spreadsheet" data-csv="spreadsheet/data.csv" data-width="100" data-fontsize="16">
+</div>
+			</section>
+			<section>
+				<h4>Source code</h3>
+<pre><code data-trim>
+&#60;div class="spreadsheet" data-csv="data.csv" data-width="100"  data-fontsize="16"&#62;
+&#60;/div&#62;
+</code></pre>
+			</section>
+			</section>
+			<section>
+				<h2>Credits</h2>
+				<p> 
+					The spreadsheet is inspired by the <a href="http://jsfiddle.net/ondras/hyfn3/">Excel-like app</a> by Ondřej Žára and uses the <a href="https://github.com/handsontable/RuleJS">RuleJS</a> library to parse Excel formulas.
+				<p>
+			</section>
+			<section>
+				<h3>Supported formulas</h3>
+<iframe class="stretch" data-src="http://handsontable.github.io/ruleJS/"></iframe>
+			</section>
+			<section data-audio-text="You can download the plugin on github. Do not forget to check out the other plugins.">
+			<h2>The end</h2>
+
+				<p>Check out other plugins by clicking on &nbsp;<a href="#" onclick="RevealMenu.toggle(); return false;"><i class="fa fa-bars"></i></a>&nbsp; and then on "Plugins <i class="fa fa-external-link"></i>".</p>
+				<p>Have a look at the source code & documentation on <a href="https://github.com/rajgoel/reveal.js-plugins">Github</a>.</p>
+					
+			</section>
+
+		</div>
+	</div>
+
+
+
+	<script src="../reveal.js/lib/js/head.min.js"></script>
+	<script src="../reveal.js/js/reveal.js"></script>
+
+	<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				width: 1200,
+				height: 800,
+				mouseWheel: true,
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true,
+//					keyboard: false,
+					custom: [
+				            { title: 'Plugins', icon: '<i class="fa fa-external-link"></i>', src: 'toc.html' },
+				            { title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
+				        ]
+				},
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // none/fade/slide/convex/concave/zoom
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../reveal.js-plugins/spreadsheet/spreadsheet.js' },
+					{ src: '../reveal.js-plugins/menu/menu.js' },
+				]
+			});
+	</script>
+
+<a href="https://github.com/rajgoel/reveal.js-plugins"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
+</body>
+</html>
