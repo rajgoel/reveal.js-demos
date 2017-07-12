@@ -51,7 +51,7 @@
                 		slide.setAttribute('data-separator',"^\\n===\\n$");
                 		slide.setAttribute('data-separator-vertical',"^\\n---\\n$");
                 		slide.setAttribute('data-separator-notes',"^Note:");
-				slide.innerHTML = "<textarea>" +  reader.result + "</textarea>";
+				slide.innerHTML = "<textarea  data-template>" +  reader.result + "</textarea>";
 				RevealMarkdown.initialize();
 				// refresh reveal
 				Reveal.toggleOverview();
