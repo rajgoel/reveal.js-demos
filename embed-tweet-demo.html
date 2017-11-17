@@ -30,12 +30,12 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 	</script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<!--[if lt IE 9]>
-	<script src="reveal.js/lib/js/html5shiv.js"></script>
+	<script src="../reveal.js/lib/js/html5shiv.js"></script>
 	<![endif]-->
 </head>
 
