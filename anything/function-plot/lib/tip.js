@@ -13,7 +13,7 @@ module.exports = function (config) {
   config = extend({
     xLine: false,
     yLine: false,
-    renderer: function (x, y) {
+    renderer: function (x, y, index) {
       return '(' + x.toFixed(3) + ', ' + y.toFixed(3) + ')'
     },
     owner: null
@@ -72,7 +72,7 @@ module.exports = function (config) {
     selection.selectAll('.tip-y-line').style('display', config.yLine ? null : 'none')
   }
 
-  tip.move = function (x0, y0) {
+  tip.move = function (coordinates) {
     var i
     var minDist = Infinity
     var closestIndex = -1
@@ -86,6 +86,9 @@ module.exports = function (config) {
     var yScale = meta.yScale
     var width = meta.width
     var height = meta.height
+
+    var x0 = coordinates.x
+    var y0 = coordinates.y
 
     for (i = 0; i < data.length; i += 1) {
       // skipTip=true skips the evaluation in the datum
@@ -129,7 +132,7 @@ module.exports = function (config) {
         .attr('fill', color)
       el.select('text')
         .attr('fill', color)
-        .text(config.renderer(x, y))
+        .text(config.renderer(x, y, closestIndex))
     } else {
       tip.hide()
     }

@@ -15,7 +15,9 @@ utility: [y = x * x](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&
 The library currently supports interactive line charts and scatterplots, whenever the graph scale is modified the function
 is evaluated again with the new bounds, result: infinite graphs!
 
-[**homepage**](http://maurizzzio.github.io/function-plot/)
+**NOTE: function-plot requires d3 v3: [see this issue to keep track of the upgrade status](https://github.com/mauriciopoppe/function-plot/issues/79)**
+
+[**homepage**](http://mauriciopoppe.github.io/function-plot/)
 
 ## Install
 
@@ -35,7 +37,7 @@ functionPlot({
 
 ## Example
 
-All the available options are described in the [`homepage`](http://maurizzzio.github.io/function-plot/)
+All the available options are described in the [`homepage`](http://mauriciopoppe.github.io/function-plot/)
 
 ## API
 
@@ -51,15 +53,17 @@ var functionPlot = require('function-plot');
   * `target` {string} the selector of the parent element to render the graph to
   * `title` {string} If set the chart will have it as a title on the top
   * `xAxis` {Object}
-    * `type` {string} *default value: `'linear'`* the scale of this axis,
+    * `type` {string} (default: `'linear'`) the scale of this axis,
         possible values `linear|log`
     * `domain` {number[]} initial ends of the axis
-    * `label` {string} label to show near the axis
+    * `invert` {boolean} (default: `false`) true to invert the values of this axis
+    * `label` {string} (default: `''`) label to show near the axis
   * `yAxis` {Object}
-    * `type` {string} *default value: `'linear'`* the scale of this axis,
+    * `type` {string} (default: `'linear'`) the scale of this axis,
         possible values `linear|log`
     * `domain` {number[]} initial ends of the axis
-    * `label` {string} label to show near the axis
+    * `invert` {boolean} (default: `false`) true to invert the values of this axis
+    * `label` {string} (default: `''`) label to show near the axis
   * `disableZoom` {boolean} true to disable drag and zoom on the graph
   * `grid` {boolean} true to show a grid
   * `tip` {object} configuration passed to `lib/tip`, it's the helper shown on mouseover on the closest
@@ -94,6 +98,7 @@ will be evaluated with intervals instead of single values
 Additional style related options
 
 * `color` {string} color of the function to render
+* `attr` {Object} additional attributes set on the svg node that represents this datum
 * `closed` {boolean=false} (only if `graphType: 'polyline'` or `graphType: 'scatter'`) True to close the path, for any segment of the closed area graph
   `y0` will be 0 and `y1` will be `f(x)`
 
@@ -172,7 +177,7 @@ An instance can subscribe to any of the following events by doing `instance.on([
 events can be triggered by doing `instance.emit([eventName][, params])`
 
 * `mouseover` fired whenever the mouse is over the canvas
-* `mousemove` fired whenever the mouse is moved inside the canvas, callback params `x`, `y` (in canvas space
+* `mousemove` fired whenever the mouse is moved inside the canvas, callback params: a single object `{x: number, y: number}` (in canvas space
 coordinates)
 * `mouseout` fired whenever the mouse is moved outside the canvas
 * `before:draw` fired before drawing all the graphs
@@ -353,9 +358,7 @@ node site.js    // generate the examples shown on index.html
 npm start
 ```
 
-Open `127.0.0.1:5555` and that's it! Local development server powered [beefy](https://www.npmjs.com/package/beefy)
-
-Development page: `127.0.0.1:5555/playground.html`
+Main page: `http://localhost:9966/site`, development page: `http://localhost:9966/site/playground.html`
 
 Deploy steps:
 
@@ -371,5 +374,5 @@ Deploy steps:
 
 [npm-image]: https://img.shields.io/npm/v/function-plot.svg?style=flat
 [npm-url]: https://npmjs.org/package/function-plot
-[travis-image]: https://travis-ci.org/maurizzzio/function-plot.svg?branch=master
-[travis-url]: https://travis-ci.org/maurizzzio/function-plot
+[travis-image]: https://travis-ci.org/mauriciopoppe/function-plot.svg?branch=master
+[travis-url]: https://travis-ci.org/mauriciopoppe/function-plot

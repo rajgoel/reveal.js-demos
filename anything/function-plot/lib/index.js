@@ -123,10 +123,10 @@ module.exports = function (options) {
 
     xScale = this.meta.xScale = d3.scale[options.xAxis.type]()
       .domain(xDomain)
-      .range([0, width])
+      .range(options.xAxis.invert ? [width, 0] : [0, width])
     yScale = this.meta.yScale = d3.scale[options.yAxis.type]()
       .domain(yDomain)
-      .range([height, 0])
+      .range(options.yAxis.invert ? [0, height] : [height, 0])
     this.meta.xAxis = d3.svg.axis()
       .scale(xScale)
       .tickSize(options.grid ? -height : 0)
@@ -144,6 +144,7 @@ module.exports = function (options) {
     this.meta = {}
 
     margin = this.meta.margin = {left: 30, right: 30, top: 20, bottom: 20}
+    // margin = this.meta.margin = {left: 0, right: 0, top: 20, bottom: 20}
     // if there's a title make the top margin bigger
     if (options.title) {
       this.meta.margin.top = 40
@@ -350,12 +351,19 @@ module.exports = function (options) {
       .each(function () {
         var el = d3.select(this)
         // make a copy of all the listeners available to be removed/added later
-        var listeners = ['mousedown', 'mousewheel', 'mouseover', 'DOMMouseScroll', 'dblclick', 'wheel', 'MozMousePixelScroll']
-        listeners = listeners.map(function (l) { return l + '.zoom' })
-        if (!el._hasZoomListeners) {
+        var listeners = [
+          'mousedown',
+          'touchstart',
+          ('onwheel' in document ?
+            'wheel' : 'ononmousewheel' in document ?
+            'mousewheel' :
+            'MozMousePixelScroll')
+        ].map(function (d) { return d + '.zoom' })
+        if (!el._zoomListenersCache) {
           listeners.forEach(function (l) {
             el['_' + l] = el.on(l)
           })
+          el._zoomListenersCache = true
         }
         function setState (state) {
           listeners.forEach(function (l) {
@@ -434,7 +442,7 @@ module.exports = function (options) {
     var self = this
 
     // enter
-    this.canvas.enter
+    this.draggable = this.canvas.enter
       .append('rect')
       .attr('class', 'zoom-and-drag')
       .style('fill', 'none')
@@ -525,8 +533,8 @@ module.exports = function (options) {
     var instance = this
 
     var events = {
-      mousemove: function (x, y) {
-        instance.tip.move(x, y)
+      mousemove: function (coordinates) {
+        instance.tip.move(coordinates)
       },
 
       mouseover: function () {
@@ -564,10 +572,13 @@ module.exports = function (options) {
     var all = {
       mousemove: function () {
         var mouse = d3.mouse(instance.root.select('rect.zoom-and-drag').node())
-        var x = xScale.invert(mouse[0])
-        var y = yScale.invert(mouse[1])
+        var coordinates = {
+          x: xScale.invert(mouse[0]),
+          y: yScale.invert(mouse[1])
+        }
         instance.linkedGraphs.forEach(function (graph) {
-          graph.emit('mousemove', x, y)
+          graph.emit('before:mousemove', coordinates)
+          graph.emit('mousemove', coordinates)
         })
       },
 
