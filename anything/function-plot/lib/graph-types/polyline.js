@@ -5,21 +5,12 @@
 var d3 = window.d3
 var evaluate = require('../evaluate')
 var utils = require('../utils')
+var clamp = require('clamp')
 
 module.exports = function (chart) {
   var xScale = chart.meta.xScale
   var yScale = chart.meta.yScale
-  var line = d3.svg.line()
-    .interpolate('linear')
-    .x(function (d) { return xScale(d[0]) })
-    .y(function (d) { return yScale(d[1]) })
-  var area = d3.svg.area()
-    .x(function (d) { return xScale(d[0]) })
-    .y0(yScale(0))
-    .y1(function (d) { return yScale(d[1]) })
-
   function plotLine (selection) {
-
     selection.each(function (d) {
       var el = plotLine.el = d3.select(this)
       var index = d.index
@@ -27,6 +18,27 @@ module.exports = function (chart) {
       var color = utils.color(d, index)
       var innerSelection = el.selectAll(':scope > path.line')
         .data(evaluatedData)
+
+      var yRange = yScale.range()
+      var yMax = yRange[0] + 1
+      var yMin = yRange[1] - 1
+      if (d.skipBoundsCheck) {
+        yMax = Infinity
+        yMin = -Infinity
+      }
+
+      function y (d) {
+        return clamp(yScale(d[1]), yMin, yMax)
+      }
+
+      var line = d3.svg.line()
+        .interpolate('linear')
+        .x(function (d) { return xScale(d[0]) })
+        .y(y)
+      var area = d3.svg.area()
+        .x(function (d) { return xScale(d[0]) })
+        .y0(yScale(0))
+        .y1(y)
 
       innerSelection.enter()
         .append('path')
@@ -57,6 +69,7 @@ module.exports = function (chart) {
             })
             .attr('d', pathD)
         })
+        .attr(d.attr)
 
       innerSelection.exit().remove()
     })
