@@ -87,7 +87,7 @@
 			<section>
 			<h2>The end</h2>
 
-				<p>Check out other plugins by clicking on &nbsp;<a href="#" onclick="RevealMenu.toggle(); return false;"><i class="fa fa-bars"></i></a>&nbsp; and then on "Plugins <i class="fa fa-external-link"></i>".</p>
+				<p>Check out other plugins by clicking on &nbsp;<a href="#" onclick="RevealMenu.toggle(); return false;"><i class="fa fa-bars"></i></a>&nbsp; and then on "Plugins <i class="fa fa-external-link-alt"></i>".</p>
 				<p>Have a look at the source code & documentation on <a href="https://github.com/rajgoel/reveal.js-plugins">Github</a>.</p>
 				<a aria-label="Download rajgoel/reveal.js-plugins on GitHub" data-style="mega" href="https://github.com/rajgoel/reveal.js-plugins/archive/master.zip" class="github-button">Download</a>
 				<a aria-label="Star rajgoel/reveal.js-plugins on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/rajgoel/reveal.js-plugins#stargazers_count" data-count-href="/rajgoel/reveal.js-plugins/stargazers" data-style="mega" href="https://github.com/rajgoel/reveal.js-plugins" class="github-button">Star</a>					
@@ -97,9 +97,6 @@
 
 	<script src="../reveal.js/lib/js/head.min.js"></script>
 	<script src="../reveal.js/js/reveal.js"></script>
-
-	<script src="../reveal.js-plugins/broadcast/RTCMultiConnection.js"></script>
-	<script src="../reveal.js-plugins/broadcast/socket.io.js"></script>
 
 	<script>
 		// Manage presentation specific handling of broadcast id
@@ -167,6 +164,8 @@
 					socketURL: "https://revealjs-broadcast.herokuapp.com/"
 //					socketURL: 'https://rtcmulticonnection.herokuapp.com:443/'
 				},
+//				width: 640,
+//				height: 360,
 			},
 			chalkboard: { // font-awesome.min.css must be available
 				src: "chalkboard/chalkboard.json",
@@ -198,6 +197,8 @@
 				{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 				{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 				{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../reveal.js-plugins/broadcast/RTCMultiConnection.min.js'},
+				{ src: '../reveal.js-plugins/broadcast/socket.io.js'},
 				{ src: '../reveal.js-plugins/broadcast/bCrypt.js'},
 				{ src: '../reveal.js-plugins/broadcast/broadcast.js'},
 				{ src: '../reveal.js-plugins/chalkboard/chalkboard.js'},
