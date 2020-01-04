@@ -260,8 +260,8 @@ echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"
 				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
 				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
 				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
-				    90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
-				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
 				},
 			});
 	</script>
