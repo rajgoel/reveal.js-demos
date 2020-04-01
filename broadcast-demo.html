@@ -160,9 +160,8 @@
 					// For anything mission critical I recommend you run your own server. 
 					// You can deploy https://github.com/muaz-khan/RTCMultiConnection on heroku.com
 					// See instructions at https://github.com/muaz-khan/RTCMultiConnection/blob/master/docs/installation-guide.md
-					// The only change required to server.js is to set isUseHTTPs = true;
-					socketURL: "https://revealjs-broadcast.herokuapp.com/"
 //					socketURL: 'https://rtcmulticonnection.herokuapp.com:443/'
+					socketURL: "https://revealjs-broadcast.herokuapp.com/"
 				},
 //				width: 640,
 //				height: 360,
@@ -197,8 +196,9 @@
 				{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 				{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 				{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '../reveal.js-plugins/broadcast/RTCMultiConnection.min.js'},
-				{ src: '../reveal.js-plugins/broadcast/socket.io.js'},
+				{ src: '../reveal.js-plugins/broadcast/RTCMultiConnection/RTCMultiConnection.js'},
+				{ src: '../reveal.js-plugins/broadcast/RTCMultiConnection/adapter.js'},
+				{ src: '../reveal.js-plugins/broadcast/RTCMultiConnection/socket.io.js'},
 				{ src: '../reveal.js-plugins/broadcast/bCrypt.js'},
 				{ src: '../reveal.js-plugins/broadcast/broadcast.js'},
 				{ src: '../reveal.js-plugins/chalkboard/chalkboard.js'},
