@@ -65,6 +65,9 @@
 			   <section>
 				<h3>Start broadcast</h3>
 				<div>Click <a href="#" onclick="RevealBroadcast.start( { id: document.getElementById('broadcastid').value, password: document.getElementById('password').value } ); return false;"><i class="fa fa-rss"></i></a> to start the broadcast with the given id.</div>
+				<div style="color:gray;font-size:20px">
+					This may not work on all browsers. Please check the documentation on <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/broadcast">Github</a>
+				</div>
 			   </section>
 			</section>
 			<section>
@@ -83,6 +86,19 @@
 				<h2>Join broadcast</h2>
 				<div>Click <a href="#" onclick="RevealBroadcast.connect( { id: document.getElementById('broadcastid').value } ); return false;"><i class="fa fa-toggle-right"></i></a> to connect to the broadcast with id <span style="color:red" id="currentid"></span>.</div>
 			   </section>
+			</section>
+			<section>
+			   <section>
+				<h2>Chalkboard</h2>
+				<div> By presssing 'b' or clicking on the &nbsp;<i class="fa fa-pen-square"></i>&nbsp; button you can open and close a chalkboard for drawings. A ll drawings will be broadcast to the client.
+				</div>
+			   </section>
+			</section>
+			<section>
+				<h2>Credits</h2>
+				<p> 
+					The plugin is based on <a href="https://github.com/muaz-khan/RTCMultiConnection">RTCMultiConnection</a> by Muaz Khan.
+				<p>
 			</section>
 			<section>
 			<h2>The end</h2>
@@ -204,14 +220,25 @@
 				{ src: '../reveal.js-plugins/chalkboard/chalkboard.js'},
 				{ src: '../reveal.js-plugins/menu/menu.js'},
 			],
-			keyboard: {
-			    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
-			    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
-			    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
-			     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
-			},
-		});
+				keyboard: {
+				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
+				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
+				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
+				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
+				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
+				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
+//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+				},
+			});
 
+			function changeTheme(input) {
+				var config = {};
+				config.theme = input.value;
+				RevealChalkboard.configure(config);
+				input.blur();
+			}
 	</script>
 <a href="https://github.com/rajgoel/reveal.js-plugins"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
 
