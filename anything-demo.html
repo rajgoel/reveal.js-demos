@@ -14,24 +14,21 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-	<link rel="stylesheet" href="../reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme">
+	<link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
 
-	<!-- Code syntax highlighting -->
-	<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-	<!-- Printing and PDF exports -->
-	<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-
-	<!--[if lt IE 9]>
-	<script src="../reveal.js/lib/js/html5shiv.js"></script>
-	<![endif]-->
+	<script src="../reveal.js/dist/reveal.js"></script>
+	<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+	<script src="../reveal.js-plugins/menu/menu.js"></script>
+	<script src="../reveal.js-plugins/anything/plugin.js"></script>
+	<script src="anything/Chart.min.js"></script>
+	<script src="anything/d3/d3.v3.min.js"></script>				
+	<script src="anything/d3.patch.js"></script>			
+	<script src="anything/d3/queue.v1.min.js"></script>		
+	<script src="anything/d3/topojson.v1.min.js"></script>		
+	<script src="anything/function-plot.js"></script>
 </head>
 
 <body>
@@ -524,29 +521,11 @@ Reveal.initialize({
 					}) },
 					{className: "anything",  initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} }) }
 				],
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // none/fade/slide/convex/concave/zoom
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'anything/d3/d3.v3.min.js' },				
-					{ src: 'anything/d3.patch.js' },				
-					{ src: 'anything/d3/queue.v1.min.js' },				
-					{ src: 'anything/d3/topojson.v1.min.js' },				
-//					{ src: 'anything/function-plot/site/js/vendor/d3.js' },				
-					{ src: 'anything/function-plot/dist/function-plot.js' },				
-					{ src: '../reveal.js-plugins/chart/Chart.min.js' },				
-					{ src: '../reveal.js-plugins/anything/anything.js' },				
-					{ src: '../reveal.js-plugins/menu/menu.js' },
-				],
+				plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealAnything ],
 
 			});
 	</script>
-<a href="https://github.com/rajgoel/reveal.js-plugins"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+<a href="https://github.com/rajgoel/reveal.js-plugins"><img style="position: absolute; top: 0; left: 0; border: 0;" src="forkme.png"></a>
 
 </body>
 </html>
