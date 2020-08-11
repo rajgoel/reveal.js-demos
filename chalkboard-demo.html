@@ -23,17 +23,12 @@
 	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
 	<script src="../reveal.js-plugins/menu/menu.js"></script>
 	<script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+	<script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
 
 	<!-- Font awesome -->
-	<!--
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	-->	
 	<link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
 
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<!--[if lt IE 9]>
-	<script src="../reveal.js/lib/js/html5shiv.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -120,7 +115,7 @@
 			</section>
 			<section data-audio-text="Here is the image that has been used to create the chalkboard drawing on the previous slide">  
 				<h3>Original image</h3>
-				<img class="stretch" src="chalkboard/Manga_grayscale.svg"></img>
+				<img class="stretch" src="chalkboard/Manga_grayscale.svg" style="background-color:white;"></img>
 				<p style="color:dimgray; font-size: 20px">
 					Source: <a href="https://commons.wikimedia.org/wiki/File:Manga_grayscale.svg">Wikimedia</a>
 				</p>
@@ -136,7 +131,7 @@
 			</section>
 			<section data-audio-text="This is the sample image after editing">  
 				<h3>Edited image</h3>
-				<img class="stretch" src="chalkboard/Manga_lines.svg"></img>
+				<img class="stretch" src="chalkboard/Manga_lines.svg" style="background-color:white;"></img>
 			</section>
 			<section data-audio-text="The sample image can be translated with the bash script into a JSON-file">  
 				<h3>Create JSON-file with bash script</h3>
@@ -215,12 +210,6 @@ echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"
 				            { title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
 				        ]
 				},
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-//					{ src: 'reveal.js-plugins/audio-slideshow/slideshow-recorder.js'},				
-//					{ src: '../reveal.js-plugins/audio-slideshow/audio-slideshow.js'},
-				],
 				audio: {
 					prefix: 'chalkboard/',
 					suffix: '.ogg',
@@ -235,28 +224,8 @@ echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"
 					src: "chalkboard/chalkboard.json",
 					toggleChalkboardButton: { left: "80px" },
 					toggleNotesButton: { left: "130px" },
-// 					pen:  [ 'crosshair', 'pointer' ]
-//					theme: "whiteboard",
-//					background: [ 'rgba(127,127,127,.1)' , 'reveal.js-plugins/chalkboard/img/whiteboard.png' ],
-// 					pen:  [ 'crosshair', 'pointer' ]
-//					pen: [ url('reveal.js-plugins/chalkboard/img/boardmarker.png), auto' , 'url(reveal.js-plugins/chalkboard/img/boardmarker.png), auto' ],
-//				        color: [ 'rgba(0,0,255,1)', 'rgba(0,0,255,0.5)' ],
-//				        draw: [ (RevealChalkboard) ?  RevealChalkboard.drawWithPen : null , (RevealChalkboard) ? RevealChalkboard.drawWithPen : null ],
 				},
-/*
-				keyboard: {
-				    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle chalkboard when 'c' is pressed
-				    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
-				    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
-				     8: function() { RevealChalkboard.reset() },	// reset all chalkboard data when 'BACKSPACE' is pressed
-				    68: function() { RevealChalkboard.download() },	// downlad chalkboard drawing when 'd' is pressed
-				    88: function() { RevealChalkboard.colorNext() },	// cycle colors forward when 'x' is pressed
-				    89: function() { RevealChalkboard.colorPrev() },	// cycle colors backward when 'y' is pressed
-				    90: function() { RevealChalkboard.download();  }, 	// press 'z' to download zip containing audio files
-//				    84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
-				},
-*/
-				plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChalkboard ],
+				plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChalkboard, RevealAudioSlideshow ],
 			});
 
 		function changeTheme(input) {
