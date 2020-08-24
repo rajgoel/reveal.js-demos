@@ -48,10 +48,22 @@
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section>
-				<h1>Animations with Reveal.js</h1>
+				<h1>Animations with Reveal.js and SVG.js</h1>
 				<p>
 					<small>Created by <a href="http://www.telematique.eu" >Asvin Goel</a></small>
 				</p>
+<div data-animate data-src="animate/heart.svg">
+<!--
+{
+"setup": [
+{
+"element": "#heart", 
+"modifier": "function() { this.animate(1500).ease('<>').scale(.9).loop(true,true);}"
+}
+]
+}
+-->
+</div>
 
 			</section>
 			<section>
@@ -919,7 +931,31 @@
 			<section data-transition="fade-in slide-out">
 <h2>Big-M constraint</h2>
 <div style="min-height: 1.5em">$y \leq 1 + M(1-z)$ with $z=0$
-<span class="fragment step-fade-in-then-out"></span>
+<span class="fragment step-fade-in-then-out"></span><div data-animate data-src="animate/heart.svg"><div data-animate data-src="animate/heart.svg">
+<!--
+{
+"setup": [
+{
+"element": "#heart", 
+"modifier": "function() { this.animate(1500).ease('<>').scale(.9).loop(true,true);}"
+}
+]
+}
+-->
+</div>
+
+<!--
+{
+"setup": [
+{
+"element": "#heart", 
+"modifier": "function() { this.animate(1500).ease('<>').scale(.9).loop(true,true);}"
+}
+]
+}
+-->
+</div>
+
 <span class="fragment step-fade-in-then-out"> and sufficiently large $M$</span>
 </div>
 <div data-animate data-src="animate/integer_program.svg">
