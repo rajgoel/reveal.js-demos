@@ -68,11 +68,6 @@
 			</section>
 			<section>
 <h2>Linear constraints</h2>
-    <span class="fragment step-fade-in-then-out"></span>
-    <span class="fragment step-fade-in-then-out"></span>
-    <span class="fragment step-fade-in-then-out"></span>
-    <span class="fragment step-fade-in-then-out"></span>
-    <span class="fragment step-fade-in-then-out"></span>
 
 <div data-animate data-src="animate/linear_program.svg">
 <!--
@@ -80,42 +75,9 @@
 "setup": [
 {
 "element": "g#constraints > g", 
-"modifier": "opacity",
-"parameters": [ 0 ]
+"modifier": "addClass",
+"parameters": [ "fragment" ]
 }
-],
-"animation": [
-[],
-[{
-"element": "#x_geq_0", 
-"duration": 2000, 
-"modifier": "opacity",
-"parameters": [ 1 ]
-}],
-[{
-"element": "#y_geq_0", 
-"duration": 2000, 
-"modifier": "opacity",
-"parameters": [ 1 ]
-}],
-[{
-"element": "#x_leq_4", 
-"duration": 2000, 
-"modifier": "opacity",
-"parameters": [ 1 ]
-}],
-[{
-"element": "#y_leq_6", 
-"duration": 2000, 
-"modifier": "opacity",
-"parameters": [ 1 ]
-}],
-[{
-"element": "#sum_3x_2y_leq_18", 
-"duration": 2000, 
-"modifier": "opacity",
-"parameters": [ 1 ]
-}]
 ]
 }
 -->
