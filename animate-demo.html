@@ -67,27 +67,45 @@
 
 			</section>
 			<section>
-<h2>Linear constraints</h2>
+<span class="fragment"></span>
+<span class="fragment"></span>
+<span class="fragment"></span>
+<span class="fragment"></span>
+<span class="fragment"></span>
 
 <div data-animate data-src="animate/linear_program.svg">
 <!--
 {
 "setup": [
 {
-"element": "g#constraints > g", 
-"modifier": "addClass",
-"parameters": [ "fragment" ]
+"element": "#x_geq_0", 
+"modifier": "attr",
+"parameters": [ { "class": "fragment", "data-fragment-index": "0" } ]
+},
+{
+"element": "#y_geq_0", 
+"modifier": "attr",
+"parameters": [ { "class": "fragment", "data-fragment-index": "1" } ]
+},
+{
+"element": "#x_leq_4", 
+"modifier": "attr",
+"parameters": [ { "class": "fragment", "data-fragment-index": "2" } ]
+},
+{
+"element": "#y_leq_6", 
+"modifier": "attr",
+"parameters": [ { "class": "fragment", "data-fragment-index": "3" } ]
+},
+{
+"element": "#sum_3x_2y_leq_18", 
+"modifier": "attr",
+"parameters": [ { "class": "fragment", "data-fragment-index": "4" } ]
 }
 ]
 }
 -->
 </div>
-
-<span class="fragment"></span>
-<span class="fragment"></span>
-<span class="fragment"></span>
-<span class="fragment"></span>
-<span class="fragment"></span>
  
 <!--
 <button onclick="RevealAnimate.play();this.blur();return false;">Play</button>
