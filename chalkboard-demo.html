@@ -169,7 +169,7 @@ echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"
 			</section>
 			<section data-audio-text="All drawings on the chalkboard are included in the PDF-export.">
 				<h2>Printouts</h2>
-				<p>All drawings on the chalkboard are included in the PDF-export.
+				<p>All drawings on the chalkboard are included in the <a href="chalkboard-demo.html?print-pdf">PDF-export</a>.
 				</p>
   
 			</section>
@@ -222,6 +222,7 @@ echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"
 				},
 				chalkboard: { // font-awesome.min.css must be available
 					src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
 					toggleChalkboardButton: { left: "80px" },
 					toggleNotesButton: { left: "130px" },
 				},
@@ -231,8 +232,7 @@ echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"
 		function changeTheme(input) {
 			var config = {};
 			config.theme = input.value;
-Reveal.getPlugin("RevealChalkboard").configure(config); /// NOT DEFINED?
-//			RevealChalkboard.configure(config); /// NOT DEFINED
+			Reveal.getPlugin("RevealChalkboard").configure(config);
 			input.blur();
 		}
 	</script>
