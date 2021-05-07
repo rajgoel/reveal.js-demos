@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Seminars with Reveal.js</title>
+
+	<meta name="description" content="A plugin for reveal.js">
+	<meta name="author" content="Asvin Goel">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme">
+	<link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
+
+	<script src="../reveal.js/dist/reveal.js"></script>
+        <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+	<script src="../reveal.js-plugins/menu/menu.js"></script>
+	<script src="../reveal.js-plugins/chart/Chart.min.js"></script>
+	<script src="../reveal.js-plugins/chart/plugin.js"></script>
+	<script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
+	<script src="../reveal.js-plugins/poll/plugin.js"></script>
+	<script src="../reveal.js-plugins/seminar/plugin.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+<style>
+.poll > button {
+  display: block;
+  background-color: #42affa;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  border-radius: 8px;
+  width: 20em;
+  margin: 0.5em;
+}
+
+.poll > button {
+  transition-duration: 0.4s;
+}
+
+.poll > button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.poll > button:disabled {
+  background-color: darkgray;
+  color: white;
+}
+
+.poll > button.selected:disabled {
+  background-color: blue;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-audio-text="This is a demo of the chalkboard plugin for Reveal js">
+				<h1>Seminars with Reveal.js</h1>
+				<p>
+					<small>Created by <a href="http://www.telematique.eu" >Asvin Goel</a></small>
+				</p>
+			</section>
+			 <section>
+				<h3>Provide password</h3>
+				<div>A password is required to host a seminar.</div>
+				<div><input type="password" id="password" style="font-size:70%;" value="123456"></div>
+				<div style="font-size:24px;color:gray;"> In this demo the password is '123456'</div>
+			</section>
+			<section>
+				<h3>Host seminar</h3>
+				<div>Click <a id="host" href="#"><i class="fa fa-users"></i></a> to host the seminar.</div>
+			</section>
+			</section>
+			<section>
+				<h2>Invite clients</h2>
+				<div>Invite clients to join the seminar by opening <a id="room"></a>.</div>
+			</section>
+			<section>
+				<h2>Chalkboard</h2>
+				<div>Chalkboard drawings of each host are displayed on the screens of all participants.</div>
+			</section>
+			<section>
+				<h2>Poll</h2>
+				<div class="poll" data-poll="1">
+					<button class="selected" data-value="male">Male</button>
+					<br>
+					<button data-value="female">Female</button>
+				</div>
+				<p style="font-size:24px;color:gray;">Responses: <span class="voters" data-poll="1">0</span></p>
+			</section>
+			<section>
+				<h2>Poll results</h2>
+				<div class="results" data-poll="1">
+					<p>Male: <span data-value="male">0</span></p>
+					<p>Female: <span data-value="female">0</span></p>
+				</div>
+				<p style="font-size:24px;color:gray;">Total: <span class="voters" data-poll="1"></span></p>
+			</section>
+			<section>
+			<h2>Pie chart of poll result</h2>
+<div style="height:480px!important">
+<canvas data-chart="pie" data-poll="1">
+, Male, Female
+, 0, 0
+</canvas>
+</div>
+			</section>
+			<section>
+			<h2>Bar chart of poll result</h2>
+<div style="height:480px!important">
+<canvas data-chart="bar" data-poll="1">
+, Male, Female
+, 0, 0
+</canvas>
+</div>
+			</section>
+			<section>
+			<h2>The end</h2>
+
+				<p>Check out other plugins by clicking on &nbsp;<a href="#" onclick="RevealMenu.toggle(); return false;"><i class="fa fa-bars"></i></a>&nbsp; and then on "Plugins <i class="fa fa-external-link-alt"></i>".</p>
+				<p>Have a look at the source code & documentation on <a href="https://github.com/rajgoel/reveal.js-plugins">Github</a>.</p>
+				<a aria-label="Download rajgoel/reveal.js-plugins on GitHub" data-style="mega" href="https://github.com/rajgoel/reveal.js-plugins/archive/master.zip" class="github-button">Download</a>
+				<a aria-label="Star rajgoel/reveal.js-plugins on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/rajgoel/reveal.js-plugins#stargazers_count" data-count-href="/rajgoel/reveal.js-plugins/stargazers" data-style="mega" href="https://github.com/rajgoel/reveal.js-plugins" class="github-button">Star</a>					
+			</section>
+
+		</div>
+	</div>
+
+<script>
+
+function generateToken(length) {
+	var token = "";
+	while ( token.length < length ) {
+		token += (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
+	}
+	return token.substr(0,length);
+}
+
+function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function addParam(url, param, value) {
+	var a = document.createElement('a'), regex = /(?:\?|&amp;|&)+([^=]+)(?:=([^&]*))*/g;
+	var match, str = []; a.href = url; param = encodeURIComponent(param);
+	while (match = regex.exec(a.search)) {
+		if (param != match[1]) str.push(match[1]+(match[2]?"="+match[2]:""));
+	}
+	str.push(param+(value?"="+ encodeURIComponent(value):""));
+	a.search = str.join("&");
+	return a.href;
+}
+
+/*
+function updateURL() {
+//	document.getElementById("room").innerHTML = 
+alert(	addParam(window.location.href, "room", document.getElementById('room').value ) );
+}
+*/
+
+var room = getParameterByName("room") || generateToken(32);
+var link = addParam(window.location.href, "room", room );
+document.getElementById("room").innerHTML = link;
+document.getElementById("room").href = link;
+
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: false,
+	center: true,
+	mouseWheel: true,
+	menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+		themes: false,
+		transitions: false,
+		markers: true,
+		hideMissingTitles: true,
+		custom: [
+	            { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' },
+	            { title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
+	        ]
+	},
+	chart: {
+		defaults: {
+			global: {
+				title: { fontColor: "#FFF" },
+				legend: {
+					labels: { fontColor: "#FFF" },
+				},
+			},
+			scale: {
+				scaleLabel: { fontColor: "#FFF" },
+				gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
+		                ticks: {
+					fontColor: "#FFF",                        		
+					beginAtZero: true,
+		                        callback: function (value) { if (Number.isInteger(value)) { return value; } },
+                		        stepSize: 1
+                		}
+			}
+		},
+		bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
+		pie: { backgroundColor: [ ["rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] ]},
+	},
+	seminar: { 
+		server: "https://reveal-seminar.herokuapp.com",
+		port: 4433,
+		hash: '$2a$05$hhgakVn1DWBfgfSwMihABeYToIBEiQGJ.ONa.HWEiNGNI6mxFCy8S', // password for the hash is '123456'
+		room: room,
+		autoJoin: true
+	},
+	chalkboard: { // font-awesome.min.css must be available
+//		src: "chalkboard/chalkboard.json",
+		storage: "chalkboard-demo",
+		toggleChalkboardButton: { left: "80px" },
+		toggleNotesButton: { left: "130px" },
+		readOnly: false,
+	},
+	plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChart, RevealSeminar, RevealChalkboard, RevealPoll  ],
+});
+
+document.querySelector("#host").addEventListener('click', function(e) {
+	e.preventDefault();
+	RevealSeminar.open_or_join_room(document.getElementById('password').value);
+});
+
+</script>
+
+<a href="https://github.com/rajgoel/reveal.js-plugins"><img style="position: absolute; top: 0; left: 0; border: 0;" src="forkme.png"></a>
+</body>
+</html>
