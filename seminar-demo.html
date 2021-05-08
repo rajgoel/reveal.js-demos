@@ -34,6 +34,19 @@
 
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 <style>
+#seminar-status {
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: 40;
+  height: 1em;
+  width: 100%;
+  font-size: 20px;
+  color: lightgray;
+  font-family: "courier";
+  text-align: center;
+}
+
 .poll > button {
   display: block;
   background-color: #42affa;
@@ -72,6 +85,9 @@
 
 <body>
 
+	<div id="seminar-status">
+TEST
+	</div>
 	<div class="reveal">
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
@@ -187,6 +203,11 @@ alert(	addParam(window.location.href, "room", document.getElementById('room').va
 }
 */
 
+function logger( event ) {
+			document.getElementById("seminar-status").innerHTML = event;
+			console.log( event ); 
+}
+
 var room = getParameterByName("room") || generateToken(32);
 var link = addParam(window.location.href, "room", room );
 document.getElementById("room").innerHTML = link;
@@ -237,6 +258,7 @@ Reveal.initialize({
 		port: 4433,
 		hash: '$2a$05$hhgakVn1DWBfgfSwMihABeYToIBEiQGJ.ONa.HWEiNGNI6mxFCy8S', // password for the hash is '123456'
 		room: room,
+		logger: "logger",
 		autoJoin: true
 	},
 	chalkboard: { // font-awesome.min.css must be available
