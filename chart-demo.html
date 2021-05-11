@@ -22,7 +22,7 @@
         <script src="../reveal.js/plugin/markdown/markdown.js"></script>
 	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
 	<script src="../reveal.js-plugins/menu/menu.js"></script>
-	<script src="../reveal.js-plugins/chart/Chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
 	<script src="../reveal.js-plugins/chart/plugin.js"></script>
 </head>
 
@@ -39,8 +39,19 @@
 				</p>
 			</section>
 			<section>
+			<h2>Pie chart of poll result</h2>
+<div style="height:480px">
+<canvas data-chart="pie" data-poll="1">
+, Male, Female
+, 43, 57
+, 51, 49
+</canvas>
+</div>
+			</section>
+			<section>
 				<h3>Line chart from JSON string</h3>
-				<canvas class="stretch" data-chart="line">
+				<div style="height:480px">
+				<canvas data-chart="line" >
 <!--
 {
  "data": {
@@ -55,15 +66,16 @@
     "label":"My second dataset","backgroundColor":"rgba(220,120,120,.8)"
    }
   ]
- }, 
- "options": { "responsive": "true" }
+ }
 }
 -->
 				</canvas>
+				</div>
 			</section>
 			<section>
 				<h3>Line chart with CSV data and JSON configuration</h3>
-				<canvas class="stretch" data-chart="line">
+				<div style="height:480px">
+				<canvas data-chart="line" >
 My first dataset,  65, 59, 80, 81, 56, 55, 40
 <!-- This is a comment -->
 My second dataset, 28, 48, 40, 19, 86, 27, 90
@@ -76,35 +88,42 @@ My second dataset, 28, 48, 40, 19, 86, 27, 90
 }
 -->
 				</canvas>
+				</div>
 			</section>
 			<section>
 				<h3>Bar chart with CSV data</h3>
-				<canvas class="stretch" data-chart="bar">
+				<div style="height:480px">
+				<canvas data-chart="bar" >
 ,January, February, March, April, May, June, July
 My first dataset, 65, 59, 80, 81, 56, 55, 40
 My second dataset, 28, 48, 40, 19, 86, 27, 90
 				</canvas>
+				</div>
 			</section>
 			<section>
 				<h3>Stacked bar chart from CSV file with JSON configuration</h3>
-				<canvas class="stretch" data-chart="bar" data-chart-src="chart/data.csv">
+				<div style="height:480px">
+				<canvas data-chart="bar" data-chart-src="chart/data.csv">
 <!-- 
 {
 "data" : {
 "datasets" : [{ "backgroundColor": "#0f0" }, { "backgroundColor": "#0ff" } ]
 },
-"options": { "responsive": true, "scales": { "xAxes": [{ "stacked": true }], "yAxes": [{ "stacked": true }] } }
+"options": { "scales": { "x": { "stacked": true }, "y": { "stacked": true } } }
 }
 -->
 				</canvas>
+				</div>
 			</section>
 			<section>
 				<h3>Pie chart</h3>
-				<canvas class="stretch" data-chart="pie">
+				<div style="height:480px">
+				<canvas data-chart="pie">
 ,Black, Red, Green, Yellow
 My first dataset, 40, 40, 20, 6
 My second dataset, 45, 40, 25, 4
 				</canvas>
+				</div>
 			</section>
 			<section>
 				<h2>Credits</h2>
@@ -135,21 +154,12 @@ My second dataset, 45, 40, 25, 4
 				mouseWheel: true,
 				chart: {
 					defaults: { 
-						global: { 
-							title: { fontColor: "#FFF" }, 
-							legend: {
-								position: "bottom",
-								labels: { fontColor: "#FFF" },
-							},
-							tooltips: {
-								labels: { fontColor: "#FFF" },
-							},
-						}, 
+						color: 'lightgray', // color of labels
 						scale: { 
-							scaleLabel: { fontColor: "#FFF" }, 
-							gridLines: { color: "#FFF", zeroLineColor: "#FFF" }, 
-							ticks: { fontColor: "#FFF" }, 
-						} 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
 					},
 					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
 					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
