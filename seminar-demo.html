@@ -22,12 +22,13 @@
         <script src="../reveal.js/plugin/markdown/markdown.js"></script>
 	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
 	<script src="../reveal.js-plugins/menu/menu.js"></script>
-	<script src="../reveal.js-plugins/chart/Chart.min.js"></script>
-	<script src="../reveal.js-plugins/chart/plugin.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.js"></script>
+	<script src="../reveal.js-plugins/chart/plugin.js"></script> 
 	<script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
-	<script src="../reveal.js-plugins/poll/plugin.js"></script>
-	<script src="../reveal.js-plugins/seminar/plugin.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	<script src="../reveal.js-plugins/seminar/plugin.js"></script>
+	<script src="../reveal.js-plugins/poll/plugin.js"></script>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
@@ -136,7 +137,7 @@ TEST
 			</section>
 			<section>
 			<h2>Pie chart of poll result</h2>
-<div style="height:480px!important">
+<div style="height:480px">
 <canvas data-chart="pie" data-poll="1">
 , Male, Female
 , 0, 0
@@ -145,7 +146,7 @@ TEST
 			</section>
 			<section>
 			<h2>Bar chart of poll result</h2>
-<div style="height:480px!important">
+<div style="height:480px">
 <canvas data-chart="bar" data-poll="1">
 , Male, Female
 , 0, 0
@@ -234,22 +235,12 @@ Reveal.initialize({
 	},
 	chart: {
 		defaults: {
-			global: {
-				title: { fontColor: "#FFF" },
-				legend: {
-					labels: { fontColor: "#FFF" },
-				},
+			color: 'lightgray', // color of labels
+			scale: { 
+				beginAtZero: true, 
+				ticks: { stepSize: 1 },
+				grid: { color: "lightgray" } , // color of grid lines
 			},
-			scale: {
-				scaleLabel: { fontColor: "#FFF" },
-				gridLines: { color: "#FFF", zeroLineColor: "#FFF" },
-		                ticks: {
-					fontColor: "#FFF",                        		
-					beginAtZero: true,
-		                        callback: function (value) { if (Number.isInteger(value)) { return value; } },
-                		        stepSize: 1
-                		}
-			}
 		},
 		bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]},
 		pie: { backgroundColor: [ ["rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] ]},
