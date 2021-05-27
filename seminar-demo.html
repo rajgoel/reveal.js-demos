@@ -97,26 +97,29 @@ TEST
 			</section>
 			<section>
 				<h2>Poll</h2>
+				<div>Live polls can be included in the presentation, allowing participants of a seminar to vote.</div>
 				<div class="poll" data-poll="1">
-					<button data-value="male">Male</button>
+					<button data-value="yes">Yes</button>
 					<br>
-					<button data-value="female">Female</button>
+					<button data-value="no">No</button>
 				</div>
 				<p style="font-size:24px;color:gray;">Responses: <span class="voters" data-poll="1">0</span></p>
 			</section>
 			<section>
 				<h2>Poll results</h2>
-				<div class="results" data-poll="1">
-					<p>Male: <span data-value="male">0</span></p>
-					<p>Female: <span data-value="female">0</span></p>
-				</div>
-				<p style="font-size:24px;color:gray;">Total: <span class="voters" data-poll="1"></span></p>
+				<div>Results of the live polls can be shown as text.</div>
+				<blockquote class="results" data-poll="1">
+					Yes: <span data-value="yes">0</span><br>
+					No: <span data-value="no">0</span><br>
+					<p style="font-size:24px;color:gray;">Total: <span class="voters" data-poll="1">0</span></p>
+				</blockquote>
+				<div>Alternatively, results can be shown as charts (see next slides).</div>
 			</section>
 			<section>
 			<h2>Pie chart of poll result</h2>
 <div style="height:480px">
 <canvas data-chart="pie" data-poll="1">
-, Male, Female
+, Yes, No
 , 0, 0
 </canvas>
 </div>
@@ -125,7 +128,7 @@ TEST
 			<h2>Bar chart of poll result</h2>
 <div style="height:480px">
 <canvas data-chart="bar" data-poll="1">
-, Male, Female
+, Yes, No
 , 0, 0
 </canvas>
 </div>
