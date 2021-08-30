@@ -146,25 +146,26 @@ import sys
 from xml.etree import ElementTree
 
 if len(sys.argv) < 3:
-  print('Usage:  svg2chalkboard.py &#60;svg-file&#62; &#60;slide indices json&#62; [start time] [time step]');
+  print('Usage:  svg2chalkboard.py &#60;svg-file&#62; &#60;slide indices json&#62; &#60;page number&#62; [start time] [time step]');
   exit(1);
 
 filename = sys.argv[1];
 indices  = sys.argv[2];
+page  = sys.argv[3];
 
-if len(sys.argv) < 4:
+if len(sys.argv) < 5:
   start = 0;
 else: 
-  start = int( sys.argv[3] );
-if len(sys.argv) < 5:
+  start = int( sys.argv[4] );
+if len(sys.argv) < 6:
   timestep = 30;
 else: 
-  timestep = int( sys.argv[4] );
+  timestep = int( sys.argv[5] );
 
 tree = ElementTree.parse( filename )
 root = tree.getroot()
 
-print('[{"width":960,"height":700,"data":[]},{"width":' + root.attrib['width'] + ',"height":' + root.attrib['height'] + ',"data":[{"slide":' + indices + ',"events":[');
+print('[{"width":960,"height":700,"data":[]},{"width":' + root.attrib['width'] + ',"height":' + root.attrib['height'] + ',"data":[{"slide":' + indices + ',"page":' + page + ',"events":[');
 print('{"type":"open","time":' + str(start) + ',"board":0}')
 
 timestamp = start;
@@ -182,9 +183,9 @@ for path in root.findall('{http://www.w3.org/2000/svg}path'):
 print('],"duration":' + str(timestamp) + '}]}]');
 </code></pre>
 			</section>
-			<section data-audio-text="The script is just a rough hack and it is likely that you have to adapt it significantly to work for other SVG images.">  
+			<section data-audio-text="The program is just a quick hack and you may have to adapt it to work for other SVG images">  
 				<p>
-					The script is just a rough hack and it is likely that you have to adapt it significantly to work for other SVG images.
+					The program is just a rough quick and you may have to adapt it to work for other SVG images.
 				</p>
 			</section>
 			</section>
