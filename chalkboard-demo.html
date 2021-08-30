@@ -25,6 +25,8 @@
 	<script src="../reveal.js-plugins/menu/menu.js"></script>
 	<script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
 	<script src="../reveal.js-plugins/audio-slideshow/plugin.js"></script>
+	<script src="../reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+	<script src="../reveal.js-plugins/audio-slideshow/recorder.js"></script>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
@@ -130,37 +132,55 @@
 					<li>Convert curves to lines (<a href="http://www.inkscapeforum.com/viewtopic.php?t=4308#p19653">see here</a>)</li>
 				</ul>			
 			</section>
-			<section data-audio-text="This is the sample image after editing">  
+			<section data-audio-text="This is the sample image">  
 				<h3>Edited image</h3>
 				<img class="stretch" src="chalkboard/Manga_lines.svg" style="background-color:white;"></img>
 			</section>
-			<section data-audio-text="The sample image can be translated with the bash script into a JSON-file">  
-				<h3>Create JSON-file with bash script</h3>
-				<pre data-prevent-swipe><code data-trim>
-grep 'd=\"M' Manga_lines.svg | sed 's/L/ /g' | sed -e 's/  */ /g'  | sed 's/d="M//g'  | sed 's/"//g' > tmp.csv
-BEGIN=4000
-JSON=`cat tmp.csv | while read LINE; do
- END=$((BEGIN + 500))
- OUTPUT=$OUTPUT'{"type":"draw","begin":'$BEGIN',"end":'$END',"curve":['
- BEGIN=$END
- prefix='{"x":'
- suffix=','
- for i in $LINE; do
-  if [ $prefix == '{"x":' ]; then 
-   OUTPUT=$OUTPUT$prefix$i$suffix
-   prefix='"y":'
-   suffix='},'
-  else
-   OUTPUT=$OUTPUT$prefix$i$suffix
-   prefix='{"x":'
-   suffix=','
-  fi
- done
- echo $OUTPUT']},'
- OUTPUT=""
-done`
-END=`awk 'END {print (NR)*500+4000}' tmp.csv`
-echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"slide":{"h":6,"v":0,"f":0},"events":[{"type":"open","begin":4000},'$JSON'], "duration":'$END'}]}]' | sed 's/,]/]/g' 				</code></pre>
+			<section data-audio-text="The sample image can be translated with a python program  into a JSON-file">  
+				<h3>Create JSON-file with python program</h3>
+				<pre data-prevent-swipe  class="python"><code data-trim>
+#!/usr/bin/python3
+# Converts svg paths to line segments for chalkboard.json
+
+import sys
+from xml.etree import ElementTree
+
+if len(sys.argv) < 3:
+  print('Usage:  svg2chalkboard.py &#60;svg-file&#62; &#60;slide indices json&#62; [start time] [time step]');
+  exit(1);
+
+filename = sys.argv[1];
+indices  = sys.argv[2];
+
+if len(sys.argv) < 4:
+  start = 0;
+else: 
+  start = int( sys.argv[3] );
+if len(sys.argv) < 5:
+  timestep = 30;
+else: 
+  timestep = int( sys.argv[4] );
+
+tree = ElementTree.parse( filename )
+root = tree.getroot()
+
+print('[{"width":960,"height":700,"data":[]},{"width":' + root.attrib['width'] + ',"height":' + root.attrib['height'] + ',"data":[{"slide":' + indices + ',"events":[');
+print('{"type":"open","time":' + str(start) + ',"board":0}')
+
+timestamp = start;
+for path in root.findall('{http://www.w3.org/2000/svg}path'):
+  curve = path.attrib['d'];
+  if curve[0] == 'M':
+    points = curve[1:].split('L');
+    if len(points) > 1:
+      origin = points[0].split();
+      for i in range( 1,len(points) ):
+        destination = points[i].split();
+        print(',{"type":"draw","color":0,"x1":' + origin[0] + ',"y1":' + origin[1] + ',"x2":' + destination[0] + ',"y2":' + destination[1] + ',"time":' + str(timestamp) + ',"board":0}');
+        timestamp = timestamp + timestep;
+        origin = destination
+print('],"duration":' + str(timestamp) + '}]}]');
+</code></pre>
 			</section>
 			<section data-audio-text="The script is just a rough hack and it is likely that you have to adapt it significantly to work for other SVG images.">  
 				<p>
@@ -228,7 +248,7 @@ echo '[{"width":960,"height":720,"data":[]},{"width":540,"height":720,"data":[{"
 					toggleNotesButton: { left: "130px" },
 					colorButtons: 5
 				},
-				plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChalkboard, RevealAudioSlideshow ],
+				plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChalkboard, RevealAudioSlideshow, RevealAudioRecorder ],
 			});
 
 		function changeTheme(input) {
