@@ -17,11 +17,14 @@
 	<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
 	<link rel="stylesheet" href="../reveal.js/dist/theme/black.css" id="theme">
 	<link rel="stylesheet" href="../reveal.js/plugin/highlight/zenburn.css">
+	<link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
+	<link rel="stylesheet" href="../reveal.js-plugins/customcontrols/style.css">
 
 	<script src="../reveal.js/dist/reveal.js"></script>
         <script src="../reveal.js/plugin/markdown/markdown.js"></script>
 	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
 	<script src="../reveal.js-plugins/menu/menu.js"></script>
+	<script src="../reveal.js-plugins/chalkboard/plugin.js"></script>
 	<script src="../reveal.js-plugins/customcontrols/plugin.js"></script>
 
 	<!-- Font awesome -->
@@ -41,25 +44,31 @@
 		</section>
 		<section>
 			<section>
-				<p>The plugin allows to customize the navigation controls of Reveal.js.</p>
+				<p>The plugin allows to add custom controls to Reveal.js.</p>
 			</section>
 			<section>
 				<h2>Sample configuration</h2>
 <pre><code data-trim style="width:100%">
 Reveal.initialize({
-	controls: false,
 	// ...
-	customcontrols: { 
-		slideNumberCSS : 'position: fixed; display: block; right: 90px; top: auto; left: auto; width: 50px; bottom: 30px; z-index: 31; font-family: Helvetica, sans-serif; font-size:  12px; line-height: 1; padding: 5px; text-align: center; border-radius: 10px; background-color: rgba(128,128,128,.5)',
-		controls: [ 
-			{ icon: '<i class="fa fa-caret-left"></i>', css: 'position: fixed; right: 60px; bottom: 30px; z-index: 30; font-size: 24px;', action: 'Reveal.prev(); return false;' }, 
-			{ icon: '<i class="fa fa-caret-right"></i>', css: 'position: fixed; right: 30px; bottom: 30px; z-index: 30; font-size: 24px;', action: 'Reveal.next(); return false;' }, 
-		] 
+  customcontrols: {
+		controls: [
+      {
+			  id: 'toggle-overview',
+			  title: 'Toggle overview (O)',
+			  icon: '<i class="fa fa-th"></i>',
+			  action: 'Reveal.toggleOverview();'
+			},
+			{ icon: '<i class="fa fa-pen-square"></i>',
+			  title: 'Toggle chalkboard (B)',
+			  action: 'RevealChalkboard.toggleChalkboard();'
+			},
+			{ icon: '<i class="fa fa-pen"></i>',
+			  title: 'Toggle notes canvas (C)',
+			  action: 'RevealChalkboard.toggleNotesCanvas();'
+			}
+		]
 	},
-	dependencies: [
-		{ src: 'plugin/customcontrols/customcontrols.js' },
-		// ... 
-	],
 	// ...
 });
 </code></pre>
@@ -82,8 +91,6 @@ Reveal.initialize({
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: false,
-				slideNumber: true,
 				progress: true,
 				history: true,
 				center: true,
@@ -98,7 +105,25 @@ Reveal.initialize({
 				            { title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
 				        ]
 				},
-				plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealCustomControls ],
+				customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						},
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+		]
+	},
+				plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChalkboard, RevealCustomControls ],
 			});
 	</script>
 
