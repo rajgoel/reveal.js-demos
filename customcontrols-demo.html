@@ -50,26 +50,28 @@
 				<h2>Sample configuration</h2>
 <pre><code data-trim style="width:100%">
 Reveal.initialize({
-	// ...
+  // ...
   customcontrols: {
-		controls: [
+    controls: [
       {
-			  id: 'toggle-overview',
-			  title: 'Toggle overview (O)',
-			  icon: '<i class="fa fa-th"></i>',
-			  action: 'Reveal.toggleOverview();'
-			},
-			{ icon: '<i class="fa fa-pen-square"></i>',
-			  title: 'Toggle chalkboard (B)',
-			  action: 'RevealChalkboard.toggleChalkboard();'
-			},
-			{ icon: '<i class="fa fa-pen"></i>',
-			  title: 'Toggle notes canvas (C)',
-			  action: 'RevealChalkboard.toggleNotesCanvas();'
-			}
-		]
-	},
-	// ...
+        id: 'toggle-overview',
+        title: 'Toggle overview (O)',
+        icon: '<i class="fa fa-th"></i>',
+        action: 'Reveal.toggleOverview();'
+      },
+      {
+        icon: '<i class="fa fa-pen-square"></i>',
+        title: 'Toggle chalkboard (B)',
+        action: 'RevealChalkboard.toggleChalkboard();'
+      },
+      {
+        icon: '<i class="fa fa-pen"></i>',
+        title: 'Toggle notes canvas (C)',
+        action: 'RevealChalkboard.toggleNotesCanvas();'
+      }
+    ]
+  },
+  // ...
 });
 </code></pre>
 			</section>
