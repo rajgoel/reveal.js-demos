@@ -34,6 +34,7 @@
 	<script src="../reveal.js-plugins/seminar/plugin.js"></script>
 	<script src="../reveal.js-plugins/poll/plugin.js"></script>
 	<script src="../reveal.js-plugins/questions/plugin.js"></script>
+	<script src="../reveal.js-plugins/customcontrols/plugin.js"></script>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="../reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
@@ -219,6 +220,24 @@ Reveal.initialize({
 	            { title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
 	        ]
 	},
+	customcontrols: {
+		controls: [
+		{ icon: '<i class="fa fa-pen-square"></i>',
+		  title: 'Toggle chalkboard (B)',
+		  action: 'RevealChalkboard.toggleChalkboard();'
+		},
+		{ icon: '<i class="fa fa-pen"></i>',
+		  title: 'Toggle notes canvas (C)',
+		  action: 'RevealChalkboard.toggleNotesCanvas();'
+		},
+		{
+		  id: 'toggle-questions',
+		  title: 'Toggle Q&A dashboard (Q)',
+		  icon: '<span class="fa-stack" style="margin: -24px -12px;padding:0;"><span class="fa fa-comment fa-stack-1x""></span><strong class="fa-stack-1x fa-inverse qna question-counter" style="font-size:0.5em;"></strong></span>',
+		  action: 'RevealQnA.toggleQnA();'
+		}
+		]
+	},
 	chart: {
 		defaults: {
 			color: 'lightgray', // color of labels
@@ -246,10 +265,7 @@ Reveal.initialize({
 		toggleNotesButton: { left: "130px" },
 		readOnly: false,
 	},
-	questions: {
-		toggleQnAButton: { left: "180px" },
-	},
-	plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChart, RevealSeminar, RevealChalkboard, RevealPoll, RevealQnA  ],
+	plugins: [ RevealMarkdown, RevealMenu, RevealHighlight, RevealChart, RevealSeminar, RevealChalkboard, RevealPoll, RevealQnA, RevealCustomControls ],
 });
 
 document.querySelector("#host").addEventListener('click', function(e) {
