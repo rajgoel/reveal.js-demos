@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="../reveal.js-plugins/chalkboard/style.css">
 	<link rel="stylesheet" href="../reveal.js-plugins/poll/style.css">
 	<link rel="stylesheet" href="../reveal.js-plugins/questions/style.css">
+	<link rel="stylesheet" href="../reveal.js-plugins/customcontrols/style.css">
 
 	<script src="../reveal.js/dist/reveal.js"></script>
         <script src="../reveal.js/plugin/markdown/markdown.js"></script>
@@ -222,20 +223,20 @@ Reveal.initialize({
 	},
 	customcontrols: {
 		controls: [
-		{ icon: '<i class="fa fa-pen-square"></i>',
-		  title: 'Toggle chalkboard (B)',
-		  action: 'RevealChalkboard.toggleChalkboard();'
-		},
-		{ icon: '<i class="fa fa-pen"></i>',
-		  title: 'Toggle notes canvas (C)',
-		  action: 'RevealChalkboard.toggleNotesCanvas();'
-		},
-		{
-		  id: 'toggle-questions',
-		  title: 'Toggle Q&A dashboard (Q)',
-		  icon: '<span class="fa-stack" style="margin: -24px -12px;padding:0;"><span class="fa fa-comment fa-stack-1x""></span><strong class="fa-stack-1x fa-inverse qna question-counter" style="font-size:0.5em;"></strong></span>',
-		  action: 'RevealQnA.toggleQnA();'
-		}
+			{ icon: '<i class="fa fa-pen-square"></i>',
+			  title: 'Toggle chalkboard (B)',
+			  action: 'RevealChalkboard.toggleChalkboard();'
+			},
+			{ icon: '<i class="fa fa-pen"></i>',
+			  title: 'Toggle notes canvas (C)',
+			  action: 'RevealChalkboard.toggleNotesCanvas();'
+			},
+			{
+			  id: 'toggle-questions',
+			  title: 'Toggle Q&A dashboard (Q)',
+			  icon: '<span class="fa-stack" style="margin: -24px -12px;padding:0;"><span class="fa fa-comment fa-stack-1x""></span><strong class="fa-stack-1x fa-inverse qna question-counter" style="font-size:0.5em;"></strong></span>',
+			  action: 'RevealQnA.toggleQnA();'
+			}
 		]
 	},
 	chart: {
