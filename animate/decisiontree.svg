@@ -47,98 +47,6 @@
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="g48" />
-  <!--
-{ 
-  "font": "normal 16px Arial",
-  "height": 600,
-  "width": 1100,
-  "rightMargin": 150,
-  "data": {
-    "label": "You choose",
-    "type": "decision",
-    "branch": "null",
-    "children": [{
-      "type": "chance",
-      "branch": "gate 1",
-      "label": "Price is behind",
-      "children": [{
-          "type": "chance",
-          "branch": "gate 1 (p=1/3)",
-          "label": "Host opens",
-          "children": [{
-              "type": "decision",
-              "branch": "gate 2 (p=1/2)",
-              "label": "You decide to",
-              "children": [{
-                  "type": "final",
-                  "branch": "stay",
-                  "label": "You win"
-              },{
-                  "type": "final",
-                  "branch": "change",
-                  "label": "You loose"
-              }]
-          },{
-              "type": "decision",
-              "branch": "gate 3 (p=1/2)",
-              "label": "You decide to",
-              "children": [{
-                  "type": "final",
-                  "branch": "stay",
-                  "label": "You win"
-              },{
-                  "type": "final",
-                  "branch": "change",
-                  "label": "You loose"
-              }]
-          }]
-         }, {
-          "type": "chance",
-          "branch": "gate 2 (p=1/3)",
-          "label": "Host opens",
-          "children": [{
-              "type": "decision",
-              "branch": "gate 3 (p=1)",
-              "label": "You decide to",
-              "children": [{
-                  "type": "final",
-                  "branch": "stay",
-                  "label": "You loose"
-              },{
-                  "type": "final",
-                  "branch": "change",
-                  "label": "You win"
-              }]
-          }]
-         }, {
-          "type": "chance",
-          "branch": "gate 3 (p=1/3)",
-          "label": "Host opens",
-          "children": [{
-              "type": "decision",
-              "branch": "gate 2 (p=1)",
-              "label": "You decide to",
-              "children": [{
-                  "type": "final",
-                  "branch": "stay",
-                  "label": "You loose"
-              },{
-                  "type": "final",
-                  "branch": "change",
-                  "label": "You win"
-              }]
-          }]
-      }]
-     }, {
-      "decision": "false",
-      "branch": "gate 2"
-     }, {
-      "decision": "false",
-      "branch": "gate 3"
-     }]
-  }
-}
--->
   <g
      id="g1053">
     <g
@@ -158,7 +66,7 @@
           <text
              y="356.5"
              x="118.75"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)"
              dy="-8"
              id="text4">gate 1</text>
         </g>
@@ -174,7 +82,7 @@
           <text
              y="387.5"
              x="180.75"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)"
              dy="-8"
              id="text10">gate 2</text>
         </g>
@@ -190,7 +98,7 @@
           <text
              y="444.5"
              x="118.75"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)"
              dy="-8"
              id="text16">gate 3</text>
         </g>
@@ -210,7 +118,7 @@
            id="text112"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">You choose</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">You choose</text>
       </g>
     </g>
     <g
@@ -230,7 +138,7 @@
            x="430.25"
            id="text22"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">gate 1 (p=1/3)</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">gate 1 (p=1/3)</text>
       </g>
       <g
          id="g30"
@@ -246,7 +154,7 @@
            x="370.25"
            id="text28"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">gate 2 (p=1/3)</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">gate 2 (p=1/3)</text>
       </g>
       <g
          id="g36"
@@ -262,7 +170,7 @@
            x="422.25"
            id="text34"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">gate 3 (p=1/3)</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">gate 3 (p=1/3)</text>
       </g>
       <g
          id="g120"
@@ -280,7 +188,7 @@
            id="text118"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">Price is behind</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">Price is behind</text>
       </g>
     </g>
     <g
@@ -300,7 +208,7 @@
            x="644.55408"
            id="text40"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">gate 2 (p=1/2)</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">gate 2 (p=1/2)</text>
       </g>
       <g
          id="g48"
@@ -316,7 +224,7 @@
            x="643.35815"
            id="text46"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">gate 3 (p=1/2)</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">gate 3 (p=1/2)</text>
       </g>
       <g
          id="g126"
@@ -332,7 +240,7 @@
            id="text124"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">Host opens</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">Host opens</text>
       </g>
     </g>
     <g
@@ -351,7 +259,7 @@
            id="text52"
            dy="-0.5em"
            transform="translate(831.25,62.5)"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">stay</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">stay</text>
       </g>
       <g
          id="g60"
@@ -367,7 +275,7 @@
            x="831.25"
            id="text58"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">change</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">change</text>
       </g>
       <g
          id="g132"
@@ -384,7 +292,7 @@
            id="text130"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">You decide to</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">You decide to</text>
       </g>
       <g
          id="g138"
@@ -398,7 +306,7 @@
            id="text136"
            dy="5"
            dx="20"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white">You win</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)">You win</text>
       </g>
       <g
          id="g144"
@@ -412,7 +320,7 @@
            id="text142"
            dy="5"
            dx="20"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white">You loose</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)">You loose</text>
       </g>
     </g>
     <g
@@ -431,7 +339,7 @@
            id="text64"
            dy="-0.5em"
            transform="translate(831.25,212.5)"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">stay</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">stay</text>
       </g>
       <g
          id="g72"
@@ -447,7 +355,7 @@
            x="831.25"
            id="text70"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">change</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">change</text>
       </g>
       <g
          id="g150"
@@ -464,7 +372,7 @@
            id="text148"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">You decide to</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">You decide to</text>
       </g>
       <g
          id="g156"
@@ -478,7 +386,7 @@
            id="text154"
            dy="5"
            dx="20"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white">You win</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)">You win</text>
       </g>
       <g
          id="g162"
@@ -492,7 +400,7 @@
            id="text160"
            dy="5"
            dx="20"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white">You loose</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)">You loose</text>
       </g>
     </g>
     <g
@@ -511,7 +419,7 @@
            id="text76"
            dy="-0.5em"
            transform="translate(593.75,375)"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">gate 3 (p=1)</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">gate 3 (p=1)</text>
       </g>
       <g
          id="g168"
@@ -527,7 +435,7 @@
            id="text166"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">Host opens</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">Host opens</text>
       </g>
     </g>
     <g
@@ -546,7 +454,7 @@
            id="text82"
            dy="-0.5em"
            transform="translate(831.25,362.5)"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">stay</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">stay</text>
       </g>
       <g
          id="g90"
@@ -562,7 +470,7 @@
            x="831.25"
            id="text88"
            dy="-8"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">change</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">change</text>
       </g>
       <g
          id="g174"
@@ -579,7 +487,7 @@
            id="text172"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">You decide to</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">You decide to</text>
       </g>
       <g
          id="g180"
@@ -593,7 +501,7 @@
            id="text178"
            dy="5"
            dx="20"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white">You loose</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)">You loose</text>
       </g>
       <g
          id="g186"
@@ -607,7 +515,7 @@
            id="text184"
            dy="5"
            dx="20"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white">You win</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)">You win</text>
       </g>
     </g>
     <g
@@ -626,7 +534,7 @@
              inkscape:connector-curvature="0"
              style="fill:none;stroke:firebrick;stroke-width:5px" />
           <text
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)"
              transform="translate(593.75,525)"
              dy="-0.5em"
              id="text94">gate 2 (p=1)</text>
@@ -646,7 +554,7 @@
            id="text190"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">Host opens</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">Host opens</text>
       </g>
     </g>
     <g
@@ -668,7 +576,7 @@
            id="text196"
            dy="-20"
            dx="5"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white">You decide to</text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)">You decide to</text>
       </g>
       <g
          id="g1256"
@@ -684,7 +592,7 @@
              inkscape:connector-curvature="0"
              style="fill:none;stroke:firebrick;stroke-width:5px" />
           <text
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)"
              transform="translate(831.25,512.5)"
              dy="-0.5em"
              id="text100">stay</text>
@@ -701,7 +609,7 @@
           <text
              y="565.5"
              x="831.25"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:middle;fill:var(--r-main-color)"
              dy="-8"
              id="text106">change</text>
         </g>
@@ -714,7 +622,7 @@
              id="polygon200"
              style="fill:firebrick;stroke:firebrick;stroke-width:2.5px" />
           <text
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)"
              dx="20"
              dy="5"
              id="text202">You loose</text>
@@ -728,7 +636,7 @@
              id="polygon206"
              style="fill:firebrick;stroke:firebrick;stroke-width:2.5px" />
           <text
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)"
              dx="20"
              dy="5"
              id="text208">You win</text>
@@ -740,7 +648,7 @@
        transform="translate(287.5,387.5)"
        id="g214">
       <text
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)"
          dx="20"
          dy="5"
          id="text212" />
@@ -750,7 +658,7 @@
        transform="translate(287.5,437.5)"
        id="g218">
       <text
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:white"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;line-height:normal;font-family:Arial;text-anchor:start;fill:var(--r-main-color)"
          dx="20"
          dy="5"
          id="text216" />
