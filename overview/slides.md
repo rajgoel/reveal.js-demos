@@ -40,3 +40,17 @@ My second dataset, 45, 40, 25, 4
 ### Embedded online content
 
 <iframe class="stretch" src="https://www.youtube.com/embed/5xAgp6i9lUQ?rel=0" frameborder="0" allowfullscreen></iframe>
+
+===
+
+##Open source
+
+You can find the source code of
+
+- the presentation framework [here](https://github.com/hakimel/reveal.js)
+<iframe src="https://ghbtns.com/github-btn.html?user=hakimel&repo=reveal.js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+- the plugin collection [here](https://github.com/rajgoel/reveal.js-plugins)
+<iframe src="https://ghbtns.com/github-btn.html?user=rajgoel&repo=reveal.js-plugins&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+- the demo presentations [here](https://github.com/rajgoel/reveal.js-demos)
+<iframe src="https://ghbtns.com/github-btn.html?user=rajgoel&repo=reveal.js-demos&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+
