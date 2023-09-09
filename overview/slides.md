@@ -47,10 +47,10 @@ My second dataset, 45, 40, 25, 4
 
 You can find the source code of
 
-- the presentation framework [here](https://github.com/hakimel/reveal.js)
+- the presentation framework [here](https://github.com/hakimel/reveal.js)&nbsp;
 <iframe src="https://ghbtns.com/github-btn.html?user=hakimel&repo=reveal.js&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
-- the plugin collection [here](https://github.com/rajgoel/reveal.js-plugins)
+- the plugin collection [here](https://github.com/rajgoel/reveal.js-plugins)&nbsp;
 <iframe src="https://ghbtns.com/github-btn.html?user=rajgoel&repo=reveal.js-plugins&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
-- the demo presentations [here](https://github.com/rajgoel/reveal.js-demos)
+- the demo presentations [here](https://github.com/rajgoel/reveal.js-demos)&nbsp;
 <iframe src="https://ghbtns.com/github-btn.html?user=rajgoel&repo=reveal.js-demos&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
 
