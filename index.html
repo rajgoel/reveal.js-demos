@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Slides</title>
+
+	<meta name="description" content="Slides">
+	<meta name="author" content="Asvin Goel">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <!-- Reveal.js -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/blood.css" id="theme">
+
+	<!-- Native plugins of reveal.js -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/markdown/markdown.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/math/math.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/highlight.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/zenburn.css">
+
+	<!-- Menu plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
+  <link href=" https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css " rel="stylesheet">
+
+	<!-- Font awesome is used by several plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<!-- Animate plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/animate/plugin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.2/svg.min.js"></script>
+
+	<!-- Anything plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/anything/plugin.js"></script>
+
+	<!-- Examples for the anything plugin -->
+	<script src="anything/rollofadie.js"></script>
+  <script src="https://gist.githack.com/rajgoel/000f227d1f9c79b6f8a4225e8c9a49ba/raw/globe.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
+  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+
+	<!-- Audio slideshow plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/audio-slideshow/plugin.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/audio-slideshow/recorder.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/audio-slideshow/RecordRTC.js"></script>
+
+	<!-- Chalkboard plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+	<!-- Chart plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+
+	<!-- Custom controls plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+
+	<!-- Load content plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/loadcontent/plugin.js"></script>
+
+	<!-- Fullscreen plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/fullscreen/plugin.js"></script>
+
+	<!-- Seminar plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/seminar/plugin.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+
+	<!-- Poll plugin requires seminar plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/poll/plugin.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/poll/style.css">
+
+	<!-- Questions plugin requires seminar plugin -->
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/questions/plugin.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/questions/style.css">
+
+	<!-- QR-Codes -->
+  <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+	<!-- Style file -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/style.css">
+
+	<!-- Customized style -->
+<style>
+:root {
+  --r-heading-text-shadow: none;
+  --r-heading1-text-shadow: none;
+/*
+  --r-main-font: Helvetica, sans-serif;
+  --r-heading-font: Helvetica, sans-serif;
+  --r-heading-color: darkred;
+  --r-heading-text-transform: none;
+  --r-link-color: firebrick;
+  --r-link-color-dark: darkred;
+  --r-link-color-hover: red;
+*/
+}
+
+[data-fullscreen]::after {
+    content: "";
+    display: block;
+    height: 50px; /* Adjust the value as needed */
+}
+</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Plugins for Reveal.js</h1>
+				<p>by Asvin Goel</p>
+				<div id="qrcode"></div>
+				<p><a id="url"></a></p>
+			</section>
+			<section data-markdown data-separator="^\n===\n$" data-separator-vertical="^\n---\n$">
+			</section>
+			<section>
+				<h2>The end</h2>
+				<div class="presentation-only">
+					You have reached the last slide of this slide deck. Please click
+					<ul>
+						<li><a id="pdf-link"><i class="fas fa-file-pdf"></i></a> to open a version printable to PDF or </li>
+						<li><a href="#" onclick="return nextTopic();"><i class="fas fa-external-link-alt"></i></a> to continue with the next slide deck.</li>
+            <li><a href="https://github.com/rajgoel/reveal.js-demos"><i class="fa-brands fa-github"></i></a> to obtain the source code of this presentation</li>
+					</ul>
+				</div>
+ 			</section>
+		</div>
+	</div>
+
+
+<script>
+	// list of topics
+	// the src must be found within the folder, folders must be distinct!
+	var topics = [
+		{ topic: "Overview", src: "slides.md", folder: "overview" },
+		{ topic: "Animate", src: "slides.md", folder: "animate" },
+		{ topic: "Anything", src: "slides.md", folder: "anything" },
+		{ topic: "Audio slideshow", src: "slides.md", folder: "audio-slideshow" },
+		{ topic: "Chalkboard", src: "slides.md", folder: "chalkboard" },
+		{ topic: "Chart", src: "slides.md", folder: "chart" },
+		{ topic: "Seminar", src: "slides.md", folder: "seminar" }
+	];
+
+
+	var topicId = getTopicId();
+	document.title = "Reveal.js-plugin: " + getTopic();
+  document.getElementById('pdf-link').href = getURL(topicId) + '&print-pdf';
+
+	// load topic
+	document.querySelector('section[data-markdown=""]').setAttribute("data-markdown",topics[topicId].folder + "/" + topics[topicId].src);
+
+  // Variable tracking whether slide deck is connected to seminar server
+  let connected = false;
+
+	// Full list of configuration options available at:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+		width: 1280,
+		height: 1050,
+		controls: true,
+		navigationMode: 'linear',
+		progress: true,
+		history: false,
+		center: true,
+		mouseWheel: true,
+		previewLinks: false,
+		slideNumber: true,
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+		menu: {
+			themes: false,
+			transitions: false,
+			markers: true,
+			hideMissingTitles: true,
+			custom: [
+				{ title: 'Topics', icon: '<i class="fas fa-external-link-alt">', content: getTopicsMenu() },
+				{ title: 'Broadcast', icon: '<i class="fas fa-rss">', content: getSeminarMenu() }
+			]
+		},
+		animate: {
+			autoplay: true
+		},
+		anything: [
+			{
+        className: "flipofacoin",  
+			  initialize: (function(container, options){ 
+					container.innerHTML = Math.random() < 0.5 ? "heads" : "tails";
+				})
+		  },
+			{
+        className: "rollofadie", 
+        initialize: rollofadie
+      },
+			{ 
+        className: "randomnumber",
+        defaults: {min: 0, max: 9}, 
+        initialize: (function(container, options) { container.innerHTML = Math.trunc( options.min + Math.random()*(options.max-options.min + 1) ); }) 
+      },
+			{className: "anything",  initialize: (function(container, options) { if (options && typeof options.initialize === "function") { options.initialize(container);} }) }
+		],
+		audio: {
+			defaultDuration: 5,
+			playerStyle : "position: fixed; bottom: 4px; left: 30%; width: 40%; height:70px; z-index: 33;",
+			playerOpacity: 0.5,
+			advance: 500,
+			prefix: getPath() + "/playback/",
+			suffix: '.ogg'
+		},
+		chalkboard: {
+			storage: document.title,
+			src: getPath() + "/playback/chalkboard.json",
+			theme: "blackboard"
+//			theme: "whiteboard"
+		},
+		chart: {
+			defaults: {
+				maintainAspectRatio: false,
+				responsive: true,
+				color: 'lightgray',     // color of labels
+				font: { size: 30 },
+	 			scale: {
+					beginAtZero: true,
+					ticks: { stepSize: 1, },
+					grid: { color: 'lightgray' } , // color of grid lines
+				},
+			},
+			bar: { backgroundColor: [ 'firebrick' , 'darkred', 'red' ]},
+			pie: { backgroundColor: [ ['black', 'red', 'green', 'yellow' ] ]},
+		},
+		customcontrols: {
+			controls: [
+				{ icon: '<i class="fa fa-pen-square"></i>',
+			  	title: 'Toggle chalkboard (B)',
+			  	action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+			  	title: 'Toggle notes canvas (C)',
+			  	action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+				{
+			  	id: 'toggle-questions',
+			  	title: 'Toggle Q&A dashboard (Q)',
+			  	icon: '<span class="fa-stack" style="margin: -24px -12px;padding:0;"><span class="fa-solid fa-comment fa-stack-1x"></span><strong class="fa-stack-1x fa-inverse qna question-counter" style="font-size:0.5em;"></strong></span>',
+			  	action: 'RevealQnA.toggleQnA();'
+				}
+			]
+		},
+		seminar: {
+			server: 'http://localhost:4433', // change server as necessary
+			room: document.title, // put your room name here
+			hash: '$2a$05$1LAJBcCgJeHc7chZJKKeNeIw3RQaEK9b6ZfprhiDjHquUI4GMDwTu', // a hash is required for every seminar room and can be generated on the URL of the socket.io server
+			autoJoin: true, // set to true to automatically join the seminar room
+			logger: seminarStatusLogger
+		},
+		plugins: [
+			RevealMarkdown,
+			RevealMenu,
+			RevealMath,
+			RevealHighlight,
+			RevealLoadContent,
+			RevealAnimate,
+			RevealAudioSlideshow,
+			RevealAudioRecorder,
+			RevealAnything,
+			RevealChalkboard,
+			RevealChart,
+			RevealCustomControls,
+			RevealFullscreen,
+			RevealSeminar,
+			RevealPoll,
+			RevealQnA
+    ]
+	}).then(() => {
+    // decorate inline MathJax elements with class 'math' allowing to change style
+		var inlineMathCode = document.querySelectorAll('.MathJax');
+		for (var i=0; i < inlineMathCode.length; i++) {
+console.log(inlineMathCode[i].outerHTML);
+			inlineMathCode[i].classList.add('math');
+		}
+
+    if ( !connected ) {
+      // hide all elements that 
+      var showOnConnected = document.querySelectorAll(".seminar.connected") || [];
+      for (var i=0; i < showOnConnected.length; i++) {
+        showOnConnected[i].style.display = 'none';
+      }
+    }
+
+	});
+
+	/******************************************
+	* Create QR-Code
+	******************************************/
+	function initQRCode() {
+		var QRCodeElement = document.getElementById('qrcode');
+		if ( QRCodeElement ) {
+      const qrCode = new QRCodeStyling({
+        type: "svg",
+        width: 400,
+        height: 400,
+        data: getURL(topicId),
+        image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjIiIGhlaWdodD0iNTYiIHZpZXdCb3g9IjAgMCA2MiA1NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01OSA0Mi41ODQ1TDU5IDE0LjEzODRMMTIgMy43MzY1NEwxMiA1Mi4zMTUzTDU5IDQyLjU4NDVaTTYwLjQwNTUgNDUuMzU3MkM2MS4zMzQxIDQ1LjE2NDkgNjIgNDQuMzQ3IDYyIDQzLjM5ODdMNjIgMTMuMzM1NUM2MiAxMi4zOTc1IDYxLjM0ODEgMTEuNTg1NSA2MC40MzIyIDExLjM4MjhMMTEuNDMyMiAwLjUzODI4NUMxMC4xODM2IDAuMjYxOTU2IDkgMS4yMTIyNSA5IDIuNDkxMDNMOC45OTk5OSA1My41NDM1QzguOTk5OTkgNTQuODExMSAxMC4xNjQyIDU1Ljc1OSAxMS40MDU1IDU1LjUwMkw2MC40MDU1IDQ1LjM1NzJaIiBmaWxsPSIjRDUzRjhDIi8+CjxwYXRoIGQ9Ik0wIDEyLjYwMTNDMCAxMS42NTMgMC42NjU5MzMgMTAuODM1MSAxLjU5NDUyIDEwLjY0MjhMNTAuNTk0NSAwLjQ5ODAxOUM1MS44MzU4IDAuMjQxMDI3IDUzIDEuMTg4ODcgNTMgMi40NTY0OVY1My41MDlDNTMgNTQuNzg3OCA1MS44MTY0IDU1LjczOCA1MC41Njc4IDU1LjQ2MTdMMS41Njc4MyA0NC42MTczQzAuNjUxOTQzIDQ0LjQxNDYgMCA0My42MDI1IDAgNDIuNjY0NVYxMi42MDEzWiIgZmlsbD0iI0YyRTE0MiIvPgo8cGF0aCBkPSJNMTIgMy4wMjkzMkwxMiA1My4wMjUyTDkuMDAwMDEgNTMuMDI1Mkw5LjAwMDAxIDMuMDI5MzJMMTIgMy4wMjkzMloiIGZpbGw9IiNENTNGOEMiLz4KPC9zdmc+Cg==",
+        dotsOptions: {
+            color: "var(--r-link-color-dark)",
+            type: "dots"
+        },
+        backgroundOptions: {
+            color: "white",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 10
+        },
+        cornersSquareOptions: {
+            color: "#000000",
+            type: "dots"
+        },
+        cornersDotOptions: {
+            color: "#000000",
+            type: "dot"
+        }
+      });
+      qrCode.append(QRCodeElement);
+		}
+		var urlElement = document.getElementById('url');
+		if ( urlElement ) {
+			urlElement.innerHTML = getURL(topicId);
+			urlElement.href = getURL(topicId);
+		}
+
+	}
+
+	initQRCode();
+
+	/******************************************
+	* Setup of topics
+	******************************************/
+
+	function getTopicsMenu() {
+		var topicsMenu = '<ul class="slide-menu-items">';
+		for (var i=0; i < topics.length; i++) {
+			topicsMenu += '<li class="slide-menu-item"><a href="' + getURL(i) + '" style="text-decoration:none">' + topics[i].topic + '</a></li>';
+		}
+		topicsMenu += '</ul>';
+		return topicsMenu;
+	}
+
+	function getTopicId() {
+		// get topic id
+		var urlparts= window.location.href.split('?');
+		if (urlparts.length>=2) {
+			var prefix= encodeURIComponent("topic")+'=';
+			var parts= urlparts[1].split(/[&;]/g);
+			for (var i= parts.length; i-- > 0;) {
+				if (parts[i].lastIndexOf(prefix, 0) !== -1) {
+					var j = parts[i].lastIndexOf(prefix, 0);
+					var identifier = parts[i].substr(prefix.length,parts[i].length-prefix.length);
+
+					var id = topics.findIndex(element => element.folder == identifier);
+					if ( id < 0 ) {
+						id = Number(identifier);
+					}
+					return Math.min(id,topics.length-1);
+				}
+			}
+		}
+		return 0;
+	}
+
+	function nextTopic() {
+		if ( topicId >= topics.length-1 ) {
+			alert("You already reached the last slide deck!");
+		}
+		else {
+			window.location.href = getURL(topicId+1);
+		}
+		return false;
+	}
+
+	function getURL(id) {
+		var urlparts= window.location.href.split('?');
+		if ( id === undefined ) {
+		  return urlparts[0];
+		}
+		return urlparts[0] + '?' + "topic=" + topics[id].folder;
+	}
+
+	function getPath() {
+		return topics[topicId].folder;
+	}
+
+	function getTopic() {
+		return topics[topicId].topic;
+	}
+
+	/******************************************
+	* Setup of seminar
+	******************************************/
+	function getSeminarMenu() {
+
+		var seminarMenu = '<p class="slide-menu-item" id="broadcast">'
+			+ '<form>'
+			+ '<table>'
+			+ '<tr><td> User name:</td><td> <input type="text" id="username" style="font-size:80%;" size="13"></td></tr>'
+			+ '<tr><td> Password:</td><td> <input type="password" id="password" style="font-size:80%;" size="13"></td></tr>'
+			+ '</table>'
+			+ '<button id="startSeminar" type="submit" style="margin:10px;">Start</button><button id="stopSeminar"  style="margin:10px;">Stop</button>'
+			+ '</form>'
+			+ '<p>Status log:</p>'
+			+ '<textarea id="logger" spellcheck="false" readonly style="width:100%;height:calc(100% - 180px);background-color:black;color:white;">Trying to connect to server ...\n</textarea>'
+			+ '</p>';
+		return seminarMenu;
+	}
+
+	function initSeminarMenu() {
+		var element = document.getElementById('broadcast');
+		if ( element ) {
+			// make sure that events are not propagated
+			element.parentElement.addEventListener('keydown', consumeBroadcastEvent );
+
+			var startButton = document.getElementById('startSeminar');
+			if ( startButton ) {
+				startButton.addEventListener('click', function(evt) {
+					evt.preventDefault();
+					RevealSeminar.open_or_join_room(document.getElementById('password').value, (document.getElementById('username') || {}).value || 'Lecturer');
+				});
+			}
+
+			var stopButton = document.getElementById('stopSeminar');
+			if ( stopButton ) {
+				stopButton.addEventListener('click', function(evt) {
+					evt.preventDefault();
+					if ( confirm("Are you sure you want to close the seminar for all participants?") ) {
+						RevealSeminar.close_room(document.getElementById('password').value);
+					}
+				});
+			}
+
+		}
+		else {
+			setTimeout( initSeminarMenu, 100 );
+		}
+	}
+
+	function consumeBroadcastEvent( evt ) {
+		evt.stopPropagation();
+	}
+
+	function seminarStatusLogger( message ) {
+    if ( !connected ) {
+      // hide elements that are only displayed when not connected
+      var showOnDisconnected = document.querySelectorAll(".seminar.disconnected") || [];
+   		for (var i=0; i < showOnDisconnected.length; i++) {
+        showOnDisconnected[i].style.display = "none";
+      }
+
+      // show elements that are only displayed when connected
+      var showOnConnected = document.querySelectorAll(".seminar.connected") || [];
+   		for (var i=0; i < showOnConnected.length; i++) {
+        showOnConnected[i].style.display = '';
+      }
+      connected = true;
+    }
+		var element = document.getElementById('logger');
+		if ( element ) {
+			while ( (element.value.match(/\n/g) || []).length >= 10 ) {
+				// Limit number of lines in log to 10
+				element.value = element.value.substring(element.value.indexOf("\n") + 1);
+			};
+			element.value += '> ' + message + '\n';
+		}
+	}
+
+	initSeminarMenu();
+
+</script>
+
+</body>
+</html>
