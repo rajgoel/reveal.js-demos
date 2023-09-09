@@ -1,3 +1,20 @@
+## Reveal.js
+
+[Reveal.js](https://revealjs.com/) is an open-source HTML framework allowing to create beautiful presentations supporting
+
+- authoring via MarkDown,
+- math equations with MathJax,
+- syntax highlighting for code, and
+- much more.
+
+This presentation showcases examples created with the [reveal.js plugin collection](https://github.com/rajgoel/reveal.js-plugins).
+
+===
+
+## Examples
+
+---
+
 ### Animations
 
 <div data-animate data-load="animate/heart.svg">
