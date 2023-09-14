@@ -162,7 +162,7 @@
 	document.querySelector('section[data-markdown=""]').setAttribute("data-markdown",topics[topicId].folder + "/" + topics[topicId].src);
 
   // Variable tracking whether slide deck is connected to seminar server
-  let connected = false;
+  let isConnected = false;
 
 	// Full list of configuration options available at:
 	// https://github.com/hakimel/reveal.js#configuration
@@ -285,11 +285,10 @@
     // decorate inline MathJax elements with class 'math' allowing to change style
 		var inlineMathCode = document.querySelectorAll('.MathJax');
 		for (var i=0; i < inlineMathCode.length; i++) {
-console.log(inlineMathCode[i].outerHTML);
 			inlineMathCode[i].classList.add('math');
 		}
 
-    if ( !connected ) {
+    if ( !isConnected ) {
       // hide all elements that 
       var showOnConnected = document.querySelectorAll(".seminar.connected") || [];
       for (var i=0; i < showOnConnected.length; i++) {
@@ -458,7 +457,7 @@ console.log(inlineMathCode[i].outerHTML);
 	}
 
 	function seminarStatusLogger( message ) {
-    if ( !connected ) {
+    if ( !isConnected ) {
       // hide elements that are only displayed when not connected
       var showOnDisconnected = document.querySelectorAll(".seminar.disconnected") || [];
    		for (var i=0; i < showOnDisconnected.length; i++) {
@@ -470,7 +469,7 @@ console.log(inlineMathCode[i].outerHTML);
    		for (var i=0; i < showOnConnected.length; i++) {
         showOnConnected[i].style.display = '';
       }
-      connected = true;
+      isConnected = true;
     }
 		var element = document.getElementById('logger');
 		if ( element ) {
