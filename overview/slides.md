@@ -9,6 +9,12 @@
 
 This presentation showcases examples created with the [reveal.js plugin collection](https://github.com/rajgoel/reveal.js-plugins).
 
+---
+
+### Navigation
+
+Open the menu by clicking <i class="fa-solid fa-bars"></i> in the lower left corner and click <i class="fas fa-external-link-alt"></i> to navigate to demos for specific plugins or continue with the next slides to see a few examples created with the plugin collection.
+
 ===
 
 ## Examples
@@ -70,4 +76,3 @@ You can find the source code of
 <iframe src="https://ghbtns.com/github-btn.html?user=rajgoel&repo=reveal.js-plugins&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
 - the demo presentations [here](https://github.com/rajgoel/reveal.js-demos)&nbsp;
 <iframe src="https://ghbtns.com/github-btn.html?user=rajgoel&repo=reveal.js-demos&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
-
